@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: rgb(47, 101, 250);
+            color: white;
+            font: normal 18pt Arial;
+        }
+
+        .msg1 {  /*.msg1 é uma class que dentro de uma div altera o texto*/
+            color: black;
+            font-size: xx-large; 
+            margin: 1rem; /*margem para separar o texto*/ 
+        }
+
+        #nome {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h1>Estudos de DOM</h1>
+    <p>Primeiro texto paragrafo zero</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> no JavaScript</p>
+    <div id="msg">Texto para ser alterado</div> 
+    <div class="msg1">Texto com class </div>
+    <div id="nome">Alan Carlos Dev</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[1]
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+        d.innerText = 'var.innerText Muda o Texto'
+        window.document.write(p1.innerHTML+' .write() esquever a var')
+        var nome = window.document.querySelector('div#nome')
+        nome.style.background = 'green'
+    </script>
+</body>
+</html>
