@@ -17,7 +17,6 @@
             padding: 2px;
             text-align: center;
             border-radius: 20px;
-
         }
 
         #container {
@@ -25,23 +24,19 @@
             display: flex;
             justify-content: space-between;
         }
-/*
-            width: 100px;
-            height: 100px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-*/
-        #boxinpage {
+
+        .botao {
             width: 10rem;
             height: 10rem;
             background-color: rgb(255, 156, 25);
             border-radius: 20px;
+            cursor: pointer;
             margin-top: 2px;
-            text-align: center;
             font-size: x-large;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
-
     </style>
 </head>
 <body>
@@ -49,37 +44,75 @@
         <h1>Alan Carlos Dev</h1>
     </div>
     <div id="container">
-        <div id="boxinpage">
-            <p>
-                PASTE 1
-            </p>    
-        </div>
-        <div id="boxinpage">
-            <p>
-                PASTE 2
-            </p>    
-        </div>
-        <div id="boxinpage">
-            <p>
-                PASTE 3
-            </p>    
-        </div>
-        <div id="boxinpage">
-            <p>
-                PASTE 4
-            </p>    
-        </div>
-        <div id="boxinpage">
-            <p>
-                PASTE 5
-            </p>    
-        </div>
-        <div id="boxinpage">
-            <p>
-                PASTE 6
-            </p>    
-        </div>
+        <button class="botao" onclick="changeColor(this)">
+            <p>BOTÃO 1</p>
+        </button>
+        <button class="botao" onclick="changeColor(this)">
+            <p>BOTÃO 2</p>
+        </button>
+        <button class="botao" onclick="changeColor(this)">
+            <p>BOTÃO 3</p>
+        </button>
+        <button class="botao" onclick="changeColor(this)">
+            <p>BOTÃO 4</p>
+        </button>
+        <button class="botao" onclick="changeColor(this)">
+            <p>BOTÃO 5</p>
+        </button>
+        <button class="botao" id="startButton">
+            <p>START</p>
+        </button>
+        <h1>Contador em Sequência</h1>
+        <div class="botao" id="contador2">0</div>
+        <div class="botao" id="contador1">0</div>
+        <div class="botao" id="contador">0</div>
+    <script>
+        function changeColor(button) {
+            button.style.backgroundColor = 'green';
+            var mudartexto = ("MUDOU DE COR");
+            button.querySelector('p').innerText = mudartexto;
+        }
 
-    </div>
+        const startButton = document.getElementById('startButton');
+        const contadorDiv = document.getElementById('contador');
+        const contadorDiv1 = document.getElementById('contador1');
+        const contadorDiv2 = document.getElementById('contador2');
+
+        let contador = 0;
+        let contador1 = 0;
+        let contador2 = 0;
+        let intervalId;
+
+        function incrementarContador() {
+            contador++;
+            contadorDiv.textContent = contador;
+            if (contador >= '10') {
+                contadorDiv.textContent = contador = 0;
+            } 
+        }
+        function incrementarContador1() {
+            contador1++;
+            contadorDiv1.textContent = contador1;
+            if (contador1 >= '10') {
+                contadorDiv1.textContent = contador1 = 0;
+            } 
+        }
+        function incrementarContador2() {
+            contador2++;
+            contadorDiv2.textContent = contador2;
+            if (contador2 >= '10') {
+                contadorDiv2.textContent = contador2 = 0;
+            } 
+        }
+
+        startButton.addEventListener('click', () => {
+            if (!intervalId) {
+                intervalId = setInterval(incrementarContador, 1000);
+                intervalId = setInterval(incrementarContador1, 10000);
+                intervalId = setInterval(incrementarContador2, 100000);
+            }
+        });
+        
+    </script>
 </body>
 </html>
