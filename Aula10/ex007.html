@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        button#botao {
+            font: normal 28px Arial;
+            width: 60px;
+            height: 60px;
+            background-color: rgb(250, 210, 173);
+            line-height: 60px;
+            text-align: center;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        button#zero {
+            font: normal 28px Arial;
+            width: 125px;
+            height: 60px;
+            background-color: rgb(250, 210, 173);
+            line-height: 60px;
+            text-align: center;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        div#visor {
+            font: normal 28px Arial;
+            width: 250px;
+            height: 60px;
+            border-color: black;
+            border-style: outset;
+            background-color: rgb(235, 235, 235);
+            line-height: 60px;
+            text-align: center;
+            border-radius: 20px;
+            margin-top: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>CALCULADORA</h1>
+    <div id="visor">
+        
+    </div>
+    <button id="botao" onclick="clickac()">
+        AC
+    </button>
+    <button id="botao">
+        +/-
+    </button>
+    <button id="botao">
+        %
+    </button>
+    <button id="botao" onclick="clickdividir()">
+        /
+    </button>
+    <br>
+    <button id="botao" onclick="clicksete()">
+        7
+    </button>
+    <button id="botao" onclick="clickoito()">
+        8
+    </button>
+    <button id="botao" onclick="clicknove()">
+        9
+    </button>
+    <button id="botao" onclick="clickvezes()">
+        x
+    </button>
+    <br>
+    <button id="botao" onclick="clickquatro()">
+        4
+    </button>
+    <button id="botao" onclick="clickcinco()">
+        5
+    </button>
+    <button id="botao" onclick="clickseis()">
+        6
+    </button>
+    <button id="botao" onclick="clickmenos()">
+        -
+    </button>
+    <br>
+    <button id="botao" onclick="clickum()">
+        1
+    </button>
+    <button id="botao" onclick="clickdois()">
+        2
+    </button>
+    <button id="botao" onclick="clicktres()">
+        3
+    </button>
+    <button id="botao" onclick="clickmais()">
+        +
+    </button>
+    <br>
+    <button id="zero" onclick="clickzero()">
+        0
+    </button>
+    <button id="botao">
+        ,
+    </button>
+    <button id="botao" onclick="clickigual()">
+        =
+    </button>
+
+    <script>
+        function clickzero() {
+            var ze = window.document.getElementById("visor")
+            ze.innerText = ze.innerText + '0'
+        }
+        function clickum() {
+            var um = window.document.getElementById("visor")
+            um.innerText = um.innerText + '1'
+        }
+        function clickdois() {
+            var ds = window.document.getElementById("visor")
+            ds.innerText = ds.innerText + '2'
+        }
+        function clicktres() {
+            var tr = window.document.getElementById("visor")
+            tr.innerText = tr.innerText + '3'
+        }
+        function clickquatro() {
+            var qu = window.document.getElementById("visor")
+            qu.innerText = qu.innerText + '4'
+        }
+        function clickcinco() {
+            var ci = window.document.getElementById("visor")
+            ci.innerText = ci.innerText + '5'
+        }
+        function clickseis() {
+            var se = window.document.getElementById("visor")
+            se.innerText = se.innerText + '6'
+        }
+        function clicksete() {
+            var st = window.document.getElementById("visor")
+            st.innerText = st.innerText + '7'
+        }
+        function clickoito() {
+            var oi = window.document.getElementById("visor")
+            oi.innerText = oi.innerText + '8'
+        }
+        function clicknove() {
+            var nv = window.document.getElementById("visor")
+            nv.innerText = nv.innerText + '9'
+        }
+        function clickmais() {
+            var ma = window.document.getElementById("visor")
+        ma.innerText = ma.innerText + '+'
+        }
+        function clickmenos() {
+            var me = window.document.getElementById("visor")
+            me.innerText = me.innerText + '-'
+        }
+        function clickdividir() {
+            var dv = window.document.getElementById("visor")
+            dv.innerText = dv.innerText + '/'
+        }
+        function clickvezes() {
+            var vz = window.document.getElementById("visor")
+            vz.innerText = vz.innerText + '*'
+        }
+        function clickigual() {
+        var ig = window.document.getElementById("visor");
+        var expressao = ig.innerText;
+
+        if (expressao !== "") {
+            try {
+                var resultado = eval(expressao);
+                ig.innerText = resultado;
+            } catch (error) {
+                ig.innerText = "Erro na expressão!";
+            }
+        }
+    }
+        function clickac() {
+            var ac = window.document.getElementById("visor")
+            visor.innerText = ''
+        }
+        
+    </script>
+</body>
+</html>
